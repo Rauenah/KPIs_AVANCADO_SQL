@@ -65,13 +65,12 @@ FROM vendas_dio;
 
 Calcula o valor médio gasto por pedido considerando descontos.
 
-```sql
-SELECT
-    ROUND(
-        SUM((Preco - (Preco * (Desconto /100))) * Quantidade)
-        / COUNT(*), 2
-    ) AS Ticket_Medio_Real
-FROM vendas_dio;
+select
+   round(
+     sum((Preco - (Preco * (Desconto/100))) * Quantidade)
+     / count(*), 2
+   ) as Ticket_Medio_Real
+from vendas_dio;    
 ```
 
 
